@@ -15,7 +15,9 @@ Clear();
 Write("Введите элементы массива через ПРОБЕЛ: ");
 string[] array = GetArrayFromString(ReadLine());
 WriteLine(String.Join(",", array));
-
+//2
+string[] result = ResultArray(array);
+WriteLine(String.Join(" ", result));
 
 //1 Метод создающий массив из строки
 string[] GetArrayFromString(string stringArray)
@@ -27,5 +29,19 @@ string[] GetArrayFromString(string stringArray)
         {
             result[i] = numS[i];
         }
+    return result;
+}
+//2 Метод сортирующий массив по количеству символов
+string[] ResultArray(string[] array)
+{
+    string[] result = new string[array.Length];
+    for (int i = 0; i < array.Length; i++)
+    {
+        string element = array[i];
+        if(element.Length <= 3)
+        {
+            result[i] = array[i];
+        }
+    }
     return result;
 }
